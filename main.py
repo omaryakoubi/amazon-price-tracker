@@ -15,6 +15,6 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 title = soup.find(id="productTitle").get_text()
 price = soup.find(id="priceblock_ourprice").get_text()
-converted_price =  price[0:5]
+converted_price =  float(price[0:5].replace(',','.'))
 
-print(float(converted_price))
+print(type(converted_price))
